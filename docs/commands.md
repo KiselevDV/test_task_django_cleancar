@@ -20,4 +20,10 @@ docker restart celery_worker_cleancar
 ```sh
 docker-compose run web python manage.py clean_trades
 ```
+
+## Проверка flake8
+```sh
+docker compose exec web poetry run flake8 .
+```
+
 [Вернуться к README](../README.md)

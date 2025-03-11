@@ -6,6 +6,7 @@ services:
     container_name: web_cleancar
     command: >
       sh -c "poetry run python manage.py migrate &&
+             poetry run python manage.py collectstatic --noinput &&
              poetry run gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000"
     restart: always
     volumes:
