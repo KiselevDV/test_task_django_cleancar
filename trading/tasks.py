@@ -11,11 +11,14 @@ logger = logging.getLogger(__name__)
 def save_trade(symbol, price):
     """Сохранение курса раз в минуту"""
     from trading.models import Trade
-    try:
-        Trade.objects.create(symbol=symbol, price=price, timestamp=now())
-        logger.info(f'Сохранена сделка {symbol}: {price}')
-    except Exception as e:
-        logger.error(f'Ошибка при сохранении курса {symbol}: {e}')
+    # try:
+    #     Trade.objects.create(symbol=symbol, price=price, timestamp=now())
+    #     logger.info(f'Сохранена сделка {symbol}: {price}')
+    # except Exception as e:
+    #     logger.error(f'Ошибка при сохранении курса {symbol}: {e}')
+    logger.info(f"Сохранение трейда: {symbol} - {price}")
+    Trade.objects.create(symbol=symbol, price=price)
+    logger.info(f"Трейд сохранен: {symbol} - {price}")
 
 
 @shared_task

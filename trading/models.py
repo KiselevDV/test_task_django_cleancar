@@ -3,9 +3,14 @@ from django.utils.timezone import now, timedelta
 
 
 class Trade(models.Model):
-    symbol = models.CharField(max_length=10)
-    price = models.DecimalField(max_digits=18, decimal_places=8)
-    timestamp = models.DateTimeField()
+    symbol = models.CharField(max_length=10, verbose_name='Символ')
+    price = models.DecimalField(max_digits=18, decimal_places=8, verbose_name='Цена')
+    timestamp = models.DateTimeField(default=now, verbose_name='Временная метка')
+
+    class Meta:
+        verbose_name = 'Сделка'
+        verbose_name_plural = 'Сделки'
+        ordering = ('-timestamp',)
 
     def __str__(self):
         return f'{self.symbol} - {self.price}'
