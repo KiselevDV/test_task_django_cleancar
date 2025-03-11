@@ -2,7 +2,7 @@
 
 ## 1. Клонировать репозиторий
 ```bash
-git clone https://github.com/your-repo/test_task_django_cleancar.git
+git clone https://github.com/KiselevDV/test_task_django_cleancar.git
 cd test_task_django_cleancar
 ```
 
@@ -14,7 +14,7 @@ poetry install
 ## 3. Настройка переменных окружения
 Создайте файл `.env` в корневой директории и добавьте:
 ```env
-SECRET_KEY='your-secret-key'
+SECRET_KEY='my_secret_key'
 DEBUG=True
 ALLOWED_HOSTS=127.0.0.1,localhost
 POSTGRES_DB='test_database_cleancar'

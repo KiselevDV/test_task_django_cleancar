@@ -1,8 +1,8 @@
 from django.core.cache import cache
 from rest_framework import generics
 
-from trading.models import Trade
 from trading.api.serializers import TradeSerializer
+from trading.models import Trade
 
 
 class TradeHistoryView(generics.ListAPIView):
